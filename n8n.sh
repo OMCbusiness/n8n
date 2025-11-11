@@ -9,6 +9,7 @@ sudo dnf update -y
 
 # 2️⃣ Instalar dependencias
 sudo dnf install -y yum-utils curl git
+sudo dnf install epel-release dnf-plugins-core -y
 
 # 3️⃣ Instalar Docker
 sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
