@@ -67,6 +67,7 @@ docker compose -f ~/docker-compose.yml up -d
 
 # 8️⃣ Instalar Nginx (solo instalación)
 sudo dnf install -y nginx
-sudo systemctl enable --now nginx
+sudo systemctl enable nginx
+sudo setsebool -P nis_enabled 1
 
 echo "✅ Instalación completa: N8N y Redis corriendo en Docker, Nginx instalado, y volumen externo n8n_data creado."
