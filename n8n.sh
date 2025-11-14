@@ -38,7 +38,7 @@ services:
       - N8N_PROTOCOL=https
       - NODE_ENV=production
       - WEBHOOK_URL=https://n8n.ayudaskit.com/
-      - GENERIC_TIMEZONE=\${GENERIC_TIMEZONE}
+      - GENERIC_TIMEZONE=Europe/Madrid
       - QUEUE_HEALTH_CHECK_ACTIVE=true
       - QUEUE_HEALTH_CHECK_INTERVAL=5000
       - QUEUE_TYPE=redis
