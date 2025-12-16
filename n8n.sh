@@ -46,7 +46,7 @@ services:
       - redis
 
   redis:
-    image: redis:6.2-alpine
+    image: redis:latest
     restart: always
     command: redis-server --appendonly yes
     volumes:
