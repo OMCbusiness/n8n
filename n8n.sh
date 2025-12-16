@@ -4,24 +4,24 @@
 
 set -e
 
-# 2️⃣ Instalar dependencias
+# Instalar dependencias
 sudo dnf install -y yum-utils curl git
 sudo dnf install epel-release dnf-plugins-core -y
 sudo dnf install certbot -y
 
-# 3️⃣ Instalar Docker
+# Instalar Docker
 sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo systemctl enable --now docker
 
-# 4️⃣ Crear usuario para Docker (opcional)
+# Crear usuario para Docker (opcional)
 sudo usermod -aG docker $USER
 
-# 5️⃣ Crear volumen externo n8n_data y volumen interno redis_data
+# Crear volumen externo n8n_data y volumen interno redis_data
 docker volume create n8n_data
 mkdir -p ~/redis_data
 
-# 6️⃣ Crear archivo docker-compose.yml EXACTAMENTE como lo proporcionaste
+# Crear archivo docker-compose.yml EXACTAMENTE como lo proporcionaste
 cat > ~/docker-compose.yml <<EOL
 services:
   n8n:
@@ -59,10 +59,10 @@ volumes:
     external: false
 EOL
 
-# 7️⃣ Levantar N8N y Redis
+# Levantar N8N y Redis
 docker compose -f ~/docker-compose.yml up -d
 
-# 8️⃣ Instalar Nginx (solo instalación)
+# Instalar Nginx (solo instalación)
 sudo dnf install -y nginx
 sudo systemctl enable nginx
 sudo setsebool -P nis_enabled 1
