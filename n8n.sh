@@ -4,9 +4,6 @@
 
 set -e
 
-# 1️⃣ Actualizar el sistema
-sudo dnf update -y
-
 # 2️⃣ Instalar dependencias
 sudo dnf install -y yum-utils curl git
 sudo dnf install epel-release dnf-plugins-core -y
