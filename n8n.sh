@@ -14,9 +14,6 @@ sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/dock
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo systemctl enable --now docker
 
-# Crear usuario para Docker (opcional)
-sudo usermod -aG docker $USER
-
 # Crear volumen externo n8n_data y volumen interno redis_data
 docker volume create n8n_data
 mkdir -p ~/redis_data
