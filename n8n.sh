@@ -16,10 +16,10 @@ sudo systemctl enable --now docker
 
 # Crear volumen externo n8n_data y volumen interno redis_data
 docker volume create n8n_data
-mkdir -p ~/redis_data
+mkdir -p ~/home/almalinux/redis_data
 
 # Crear archivo docker-compose.yml EXACTAMENTE como lo proporcionaste
-cat > ~/docker-compose.yml <<EOL
+cat > ~/home/almalinux/docker-compose.yml <<EOL
 services:
   n8n:
     image: docker.n8n.io/n8nio/n8n:latest
@@ -57,7 +57,7 @@ volumes:
 EOL
 
 # Levantar N8N y Redis
-docker compose -f ~/docker-compose.yml up -d
+docker compose -f ~/home/almalinux/docker-compose.yml up -d
 
 # Instalar Nginx (solo instalación)
 sudo dnf install -y nginx
