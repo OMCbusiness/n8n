@@ -60,5 +60,8 @@ EOL
 sudo dnf install -y nginx
 sudo systemctl enable nginx
 sudo setsebool -P nis_enabled 1
+# Aplicar contextos SELinux correctos a Nginx
+sudo restorecon -Rv /etc/nginx
+
 
 echo "✅ Instalación completa: N8N y Redis corriendo en Docker, Nginx instalado, y volumen externo n8n_data creado."
